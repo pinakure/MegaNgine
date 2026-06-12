@@ -1,0 +1,17 @@
+
+services:
+  megangine-service:
+    image: registry.gitlab.com/doragasu/docker-sgdk:v2.00
+    container_name: megangine
+    hostname: megangine
+    environment:
+      SGDK: /opt/sgdk
+    volumes:
+      - /src/megangine/src/scripts/compile.sh:/m68k/compile.sh:ro
+      - /src/megangine/src/scripts/update-gfx.sh:/m68k/update-gfx.sh:ro
+      - /src/megangine/src/main.c:/m68k/main.c:ro
+      - /src/megangine/src/src:/m68k/src:ro
+      - /src/megangine/src/res:/m68k/res
+      - /src/megangine/out:/m68k/out
+    restart: no
+    #entrypoint: "/bin/bash -c 'source compile.sh'"
