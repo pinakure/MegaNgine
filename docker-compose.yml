@@ -5,13 +5,14 @@ services:
     container_name: megangine
     hostname: megangine
     environment:
-      SGDK: /opt/sgdk
+      SGDK: /sgdk
     volumes:
       - /src/megangine/src/scripts/compile.sh:/m68k/compile.sh:ro
       - /src/megangine/src/scripts/update-gfx.sh:/m68k/update-gfx.sh:ro
-      - /src/megangine/src/main.c:/m68k/main.c:ro
-      - /src/megangine/src/src:/m68k/src:ro
+      - /src/megangine/src/src:/m68k/src
       - /src/megangine/src/res:/m68k/res
       - /src/megangine/out:/m68k/out
+    entrypoint: ['/bin/bash']
+    stdin_open: true  # <--- Mantiene el canal de entrada abierto
+    tty: true         # <--- Simula una terminal abierta de fondo
     restart: no
-    #entrypoint: "/bin/bash -c 'source compile.sh'"

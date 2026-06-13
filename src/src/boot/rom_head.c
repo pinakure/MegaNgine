@@ -4,14 +4,14 @@ __attribute__((externally_visible))
 const ROMHeader rom_header = {
 #if (ENABLE_BANK_SWITCH != 0)
     "SEGA SSF        ",
-#elif (ENABLE_MEGAWIFI != 0)
+#elif (MODULE_MEGAWIFI != 0)
     "SEGA MEGAWIFI   ",
 #else
     "SEGA MEGA DRIVE ",
 #endif
-    "M4G33K 2023   ",
-    "Angry Driver                                    ",
-    "Angry Driver                                    ",
+    "(C)SGDK 2024    ",
+    "SAMPLE PROGRAM                                  ",
+    "SAMPLE PROGRAM                                  ",
     "GM 00000000-00",
     0x000,
     "JD              ",
@@ -28,6 +28,6 @@ const ROMHeader rom_header = {
     0x00200000,
     0x0020FFFF,
     "            ",
-    "Angry Driver                                ",
+    "DEMONSTRATION PROGRAM                   ",
     "JUE             "
 };

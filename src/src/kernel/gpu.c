@@ -114,15 +114,9 @@ void Gpu_init(){
 
     VDP_setScreenWidth320();
     //SYS_showFrameLoad(TRUE);
-    VDP_loadTileSet(&bga_tileset, TILE_USERINDEX, DMA);
-    
-    //! This:
-    VDP_setPaletteColors(0, palette_all.data, 64);
-    //! is equivalent to this:
-    // VDP_setPalette(0, palette_all.data);
-    // VDP_setPalette(1, palette_all.data+16);
-    // VDP_setPalette(2, palette_all.data+32);
-    // VDP_setPalette(3, palette_all.data+48);
+    VDP_loadTileSet(&bga_tileset, TILE_USER_INDEX, DMA);
+
+    VDP_setPaletteColors(PAL0, palette_all->data, 64);
 }
 
 Gpu gpu;
